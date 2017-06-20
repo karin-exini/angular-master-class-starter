@@ -14,8 +14,6 @@ export class ContactsService {
   }
 
   getContact(id: string): Observable<Contact> {
-    let url: string = "http://localhost:4201/api/contacts/" + id
-    console.log(url)
-    return this.http.get(url).map(res => res.json().item);
+    return this.http.get(`http://localhost:4201/api/contacts/${id}`).map(res => res.json().item);
   }
 }
