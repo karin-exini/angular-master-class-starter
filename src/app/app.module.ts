@@ -5,9 +5,11 @@ import { MdToolbarModule, MdListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ContactsAppComponent } from './app.component';
+import {ContactsService} from "./contacts.service";
+import { ContactsListComponent } from './contacts-list/contacts-list.component'
 
 @NgModule({
-  declarations: [ContactsAppComponent],
+  declarations: [ContactsAppComponent, ContactsListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -15,6 +17,7 @@ import { ContactsAppComponent } from './app.component';
     MdListModule,
     FlexLayoutModule
   ],
+  providers: [ContactsService],
   bootstrap: [ContactsAppComponent]
 })
 export class ContactsModule {
