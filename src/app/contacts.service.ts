@@ -16,4 +16,8 @@ export class ContactsService {
   getContact(id: string): Observable<Contact> {
     return this.http.get(`http://localhost:4201/api/contacts/${id}`).map(res => res.json().item);
   }
+
+  updateContact(contact: Contact) {
+    return this.http.put(`http://localhost:4201/api/contacts/${contact.id}`, contact)
+  }
 }
