@@ -1,6 +1,6 @@
 import {Routes} from "@angular/router"
 import {ContactsListComponent} from "./contacts-list/contacts-list.component"
-import {ContactDetailComponent} from "app/contact-detail/contact-detail.component";
+import {ContactDetailsViewComponent} from "app/contact-details-view/contact-details-view.component";
 import {ContactEditorComponent} from "./contact-editor/contact-editor.component"
 
 export const APP_ROUTES: Routes = [
@@ -10,7 +10,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'contact/:id',
-    component: ContactDetailComponent
+    component: ContactDetailsViewComponent
   },
   {
     path: 'contact/:id/edit',

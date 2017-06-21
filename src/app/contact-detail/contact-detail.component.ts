@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router"
-import {ContactsService} from "../contacts.service"
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Contact} from "../models/contact"
-import {Observable} from "rxjs/Observable"
 
 @Component({
   selector: 'trm-contact-detail',
@@ -11,13 +8,13 @@ import {Observable} from "rxjs/Observable"
 })
 export class ContactDetailComponent implements OnInit {
 
-  private contact$: Observable<Contact>;
+  @Input() contact: Contact;
+  @Output() edit: EventEmitter<any> = new EventEmitter()
+  @Output() cancel: EventEmitter<any> = new EventEmitter()
 
-  constructor(private route: ActivatedRoute, private contactsService: ContactsService) { }
+  constructor() { }
 
   ngOnInit() {
-    let id: string = this.route.snapshot.params['id']
-    this.contact$ = this.contactsService.getContact(id)
   }
 
 }

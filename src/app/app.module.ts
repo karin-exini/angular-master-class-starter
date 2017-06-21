@@ -12,10 +12,11 @@ import {ContactsService} from "./contacts.service";
 import {ContactsListComponent} from './contacts-list/contacts-list.component'
 import {APP_ROUTES} from "./app.routes";
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-import { ContactEditorComponent } from './contact-editor/contact-editor.component'
+import { ContactEditorComponent } from './contact-editor/contact-editor.component';
+import { ContactDetailsViewComponent } from './contact-details-view/contact-details-view.component'
 
 @NgModule({
-  declarations: [ContactsAppComponent, ContactsListComponent, ContactDetailComponent, ContactEditorComponent],
+  declarations: [ContactsAppComponent, ContactsListComponent, ContactDetailComponent, ContactEditorComponent, ContactDetailsViewComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
