@@ -10,13 +10,13 @@ import {Observable} from "rxjs/Observable"
 })
 export class ContactsListComponent implements OnInit {
 
-  public contacts: Contact[];
+  public contacts: Observable<Contact[]>;
 
   constructor(private contactService: ContactsService) {
   }
 
   ngOnInit() {
-    this.contactService.getContacts().subscribe(c => this.contacts = c)
+    this.contacts = this.contactService.getContacts()
   }
 
 }
