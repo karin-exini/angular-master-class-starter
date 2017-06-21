@@ -9,8 +9,8 @@ import {Contact} from "../models/contact"
 export class ContactDetailComponent implements OnInit {
 
   @Input() contact: Contact;
-  @Output() edit: EventEmitter<any> = new EventEmitter()
-  @Output() cancel: EventEmitter<any> = new EventEmitter()
+  @Output() edit: EventEmitter<void> = new EventEmitter<void>()
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>()
 
   constructor() { }
 
