@@ -21,7 +21,7 @@ export class ContactDetailsViewComponent implements OnInit {
   }
 
   edit() {
-    this.router.navigate(["edit"])
+    this.router.navigate(["edit"], {relativeTo: this.route})
   }
 
   cancel() {
