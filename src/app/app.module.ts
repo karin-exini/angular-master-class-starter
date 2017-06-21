@@ -4,7 +4,7 @@ import {RouterModule} from "@angular/router"
 import {NgModule} from '@angular/core';
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
-import {MdToolbarModule, MdListModule, MdCardModule, MdButtonModule, MdInputModule} from '@angular/material';
+import {MdToolbarModule, MdListModule, MdCardModule, MdButtonModule, MdInputModule, MdIconModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {ContactsAppComponent} from './app.component';
@@ -26,6 +26,7 @@ import { ContactEditorComponent } from './contact-editor/contact-editor.componen
     MdCardModule,
     MdButtonModule,
     MdInputModule,
+    MdIconModule,
     FlexLayoutModule,
     RouterModule.forRoot(APP_ROUTES)
   ],

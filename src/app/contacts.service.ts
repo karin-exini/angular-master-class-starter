@@ -20,4 +20,14 @@ export class ContactsService {
   updateContact(contact: Contact) {
     return this.http.put(`http://localhost:4201/api/contacts/${contact.id}`, contact)
   }
+
+  search(text$: Observable<string>): Observable<Contact[]>{
+
+    let search$: Observable<string> = text$.debounceTime(500)
+      .distinctUntilChanged()
+
+    let searchResult$: Observable<Contact[]> = search$.switchMap(s => this.http.get(`http://localhost:4201/api/search?text=${s}`).map(res => res.json().items))
+
+   return searchResult$;
+  }
 }
