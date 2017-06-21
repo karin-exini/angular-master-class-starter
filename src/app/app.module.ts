@@ -11,7 +11,7 @@ import {
   MdButtonModule,
   MdInputModule,
   MdIconModule,
-  MdTabsModule
+  MdTabsModule,
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 

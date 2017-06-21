@@ -7,39 +7,43 @@
     </md-card-title-group>
     <md-card-content>
       <div fxLayout="column">
-        <trm-tabs>
+        <md-tab-group>
 
-          <trm-tab title="General">
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.name" mdInput placeholder="Name" name="name">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.email" mdInput placeholder="Email" name="email">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.phone" mdInput placeholder="Phone" name="phone">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.website" mdInput placeholder="Website" name="website">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.birthday" mdInput placeholder="Birthday" name="birthday" type="date">
-            </md-input-container>
-          </trm-tab>
+          <md-tab label="General">
+            <div fxLayout="column">
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.name" mdInput placeholder="Name" name="name">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.email" mdInput placeholder="Email" name="email">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.phone" mdInput placeholder="Phone" name="phone">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.website" mdInput placeholder="Website" name="website">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.birthday" mdInput placeholder="Birthday" name="birthday" type="date">
+              </md-input-container>
+            </div>
+          </md-tab>
 
-          <trm-tab title="Address">
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.address.street" mdInput placeholder="Street" name="street">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.address.zip" mdInput placeholder="Zip" name="zip">
-            </md-input-container>
-            <md-input-container fxFlex>
-              <input [(ngModel)]="contact.address.city" mdInput placeholder="City" name="city">
-            </md-input-container>
-          </trm-tab>
+          <md-tab label="Address">
+            <div fxLayout="column">
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.address.street" mdInput placeholder="Street" name="street">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.address.zip" mdInput placeholder="Zip" name="zip">
+              </md-input-container>
+              <md-input-container fxFlex>
+                <input [(ngModel)]="contact.address.city" mdInput placeholder="City" name="city">
+              </md-input-container>
+            </div>
+          </md-tab>
 
-        </trm-tabs>
+        </md-tab-group>
       </div>
     </md-card-content>
     <md-card-actions fxLayout fxLayoutAlign="center center">
