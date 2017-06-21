@@ -11,13 +11,13 @@ import {Observable} from "rxjs/Observable"
 })
 export class ContactDetailComponent implements OnInit {
 
-  private contact: Contact;
+  private contact$: Observable<Contact>;
 
   constructor(private route: ActivatedRoute, private contactsService: ContactsService) { }
 
   ngOnInit() {
     let id: string = this.route.snapshot.params['id']
-    this.contactsService.getContact(id).subscribe(c => this.contact = c)
+    this.contact$ = this.contactsService.getContact(id)
   }
 
 }
