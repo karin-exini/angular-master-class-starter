@@ -44,11 +44,12 @@ export class AppStore {
    *
    */
   protected reducer(state, action){
-    console.log('reducer state before', state)
-    switch(action.type) {
-      case 'vote':
-        let c = action.data === VoteActions.YES ? 1 : -1;
-        state = {...state, counter: state.counter + c}
+    switch(action) {
+      case VoteActions.YES:
+        state = {...state, counter: state.counter  + 1}
+        return state;
+      case VoteActions.NO:
+        state = {...state, counter: state.counter  - 1}
         return state;
       default : return state;
     }
