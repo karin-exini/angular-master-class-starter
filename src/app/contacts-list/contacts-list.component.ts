@@ -8,6 +8,7 @@ import 'rxjs/add/operator/distinctUntilChanged'
 import 'rxjs/add/operator/switchMap'
 import 'rxjs/add/operator/merge'
 import 'rxjs/add/operator/delay'
+import {EventBusService} from "../event-bus.service"
 
 @Component({
   selector: 'trm-contacts-list',
@@ -19,7 +20,7 @@ export class ContactsListComponent implements OnInit {
   public contacts$: Observable<Contact[]>;
   public search$: Subject<string> = new Subject()
 
-  constructor(private contactService: ContactsService) {
+  constructor(private contactService: ContactsService, private bus: EventBusService) {
   }
 
   ngOnInit() {
@@ -28,6 +29,8 @@ export class ContactsListComponent implements OnInit {
     let searchResult$: Observable<Contact[]> = this.contactService.search(this.search$)
 
     this.contacts$ = c$.merge(searchResult$)
+
+    this.bus.emit('title', 'Contacts')
 
   }
 
