@@ -29,7 +29,7 @@ export class VoterComponent {
   /**
    * Inject the appstore
    */
-  constructor(@Inject(APP_STORE) private store: Store<ApplicationState>) { }
+  constructor(@Inject(APP_STORE) private store: AppStore) { }
 
   private increment() {
     this.store.dispatch({type:VoteActions.YES})

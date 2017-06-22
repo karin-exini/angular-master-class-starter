@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {Store} from "../store/store"
 import {ApplicationState} from "../store/root-reducer"
-import {APP_STORE} from "../store/app-store"
+import {APP_STORE, AppStore} from "../store/app-store"
 
 @Component({
   selector: 'trm-status',
@@ -23,7 +23,7 @@ export class StatusComponent {
    * Inject the appStore here and listen
    * for vote changes!
    */
-  constructor(@Inject(APP_STORE) private store: Store<ApplicationState>) {
+  constructor(@Inject(APP_STORE) private store: AppStore) {
     this.votes = store.getState().votes;
 
     store.subscribe(() => {

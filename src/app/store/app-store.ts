@@ -10,6 +10,4 @@ export function createAppStore() {
   return createStore(combineReducers(ROOT_REDUCER))
 }
 
-export interface AppStore {
-
-}
+export type AppStore  = Store<ApplicationState>
