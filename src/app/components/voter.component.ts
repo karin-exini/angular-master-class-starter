@@ -29,12 +29,10 @@ export class VoterComponent {
   constructor(private store: AppStore) { }
 
   private increment() {
-    console.log('inc')
     this.store.dispatch({type: 'vote', data: VoteActions.YES})
   }
 
   private decrement() {
-    console.log('dec')
     this.store.dispatch({type: 'vote', data: VoteActions.NO})
   }
 }

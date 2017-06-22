@@ -24,7 +24,6 @@ export class AppStore {
    *  condistionally update the state
    */
   dispatch(action) {
-    console.log('dispatch', action)
     const newState = this.reducer(this.state, action);
     if (newState !== this.state) {
       this.state = newState;
@@ -49,9 +48,7 @@ export class AppStore {
     switch(action.type) {
       case 'vote':
         let c = action.data === VoteActions.YES ? 1 : -1;
-        console.log('voting', c)
         state = {...state, counter: state.counter + c}
-        console.log('new state', state)
         return state;
       default : return state;
     }
